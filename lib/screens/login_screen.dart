@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:topicos/utilities/constants.dart';
 
-class LoginScreen extends StatefulWidget {
+class InicioSesion extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _InicioSesionState createState() => _InicioSesionState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _InicioSesionState extends State<InicioSesion> {
   bool _rememberMe = false;
 
   Widget _buildEmailTF() {
@@ -21,21 +21,21 @@ class _LoginScreenState extends State<LoginScreen> {
           'Correo electrónico',
           style: kLabelStyle,
         ),
-        SizedBox(height: 10.0),
+        const SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
           decoration: kBoxDecorationStyle,
           height: 60.0,
           child: TextField(
             keyboardType: TextInputType.emailAddress,
-            style: TextStyle(
+            style: const TextStyle(
               color: Color.fromARGB(0, 0, 0, 0),
               fontFamily: 'OpenSans',
             ),
             decoration: InputDecoration(
               border: InputBorder.none,
               contentPadding: EdgeInsets.only(top: 14.0),
-              prefixIcon: Icon(
+              prefixIcon: const Icon(
                 Icons.email,
                 color: Color.fromARGB(0, 0, 0, 0),
               ),

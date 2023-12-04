@@ -7,13 +7,11 @@ import 'package:topicos/screens/intenciones_screen.dart';
 import 'package:topicos/screens/login_screen.dart';
 import 'package:topicos/screens/popular_screen.dart';
 import 'package:topicos/screens/splash_screen.dart';
-import 'package:topicos/screens/login_screen.dart';
 import 'package:topicos/pages/onboarding_page.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class AplicacionPrincipal extends StatelessWidget {
+  const AplicacionPrincipal({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +23,14 @@ class MainApp extends StatelessWidget {
         "/movie": (context) => PopularScreen()
       },
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }
 
 void main() {
-  runApp(FirstScreen());
-  runApp(MainApp());
+  runApp(const AplicacionFrutas());
+  runApp(const AplicacionPrincipal());
 
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
@@ -54,14 +52,16 @@ class MyApp extends StatelessWidget {
 }
 
 
-class FirstScreen extends StatefulWidget {
+class AplicacionFrutas extends StatefulWidget {
+  const AplicacionFrutas({super.key});
+
   @override
   State<StatefulWidget> createState() {
-    return _FirstScreen();
+    return MenuFrutas();
   }
 }
 
-class _FirstScreen extends State<FirstScreen> {
+class MenuFrutas extends State<AplicacionFrutas> {
   bool _isFavorited = true;
 
   void _toggleFavorite() {
@@ -76,10 +76,10 @@ class _FirstScreen extends State<FirstScreen> {
       home: Scaffold(
         appBar: AppBar(
           elevation: 0,
-          backgroundColor: Color.fromARGB(255, 0, 0, 0),
+          backgroundColor: const Color.fromARGB(255, 0, 0, 0),
           leading: Row(
             children: <Widget>[
-              SizedBox(
+              const SizedBox(
                 width: 5.0,
               ),
               IconButton(
@@ -99,12 +99,12 @@ class _FirstScreen extends State<FirstScreen> {
               ),
               onPressed: () {},
             ),
-            SizedBox(
+            const SizedBox(
               width: 20.0,
             ),
           ],
         ),
-        backgroundColor: Color.fromARGB(255, 251, 255, 1),
+        backgroundColor: const Color.fromARGB(255, 251, 255, 1),
         body: ListView(
           children: <Widget>[
             Column(
@@ -117,54 +117,54 @@ class _FirstScreen extends State<FirstScreen> {
                   height: 10.0,
                 ),
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: Color.fromARGB(255, 255, 255, 255),
-                      borderRadius: new BorderRadius.only(
-                        topLeft: const Radius.circular(10.0),
-                        topRight: const Radius.circular(10.0),
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10.0),
+                        topRight: Radius.circular(10.0),
                       )),
                   height: 400,
                   width: 600,
                   child: Align(
                     alignment: Alignment.bottomLeft,
                     child: Padding(
-                      padding: EdgeInsets.all(20.0),
+                      padding: const EdgeInsets.all(20.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          SizedBox(
+                          const SizedBox(
                             height: 20.0,
                           ),
-                          Text(
+                          const Text(
                             'Fruta',
                             style: TextStyle(
                                 fontSize: 50.0, fontWeight: FontWeight.bold),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10.0,
                           ),
-                          Text('Cada uno.'),
-                          SizedBox(
+                          const Text('Cada uno.'),
+                          const SizedBox(
                             height: 20.0,
                           ),
                           CounterDesign(),
-                          SizedBox(
+                          const SizedBox(
                             height: 30.0,
                           ),
-                          Text(
+                          const Text(
                             'Descripción del producto',
                             style: TextStyle(
                                 fontSize: 20.0, fontWeight: FontWeight.bold),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 15.0,
                           ),
-                          Text(
+                          const Text(
                             'Una rica piña, una fresa delicioosa y un arándano espectacular.',
                             style:
                                 TextStyle(letterSpacing: 2.0, fontSize: 15.0),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 30.0,
                           ),
                           Row(
@@ -177,23 +177,23 @@ class _FirstScreen extends State<FirstScreen> {
                                 height: 70.0,
                                 child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                    primary: Colors
+                                    foregroundColor: Colors
                                         .white, // Color de fondo del botón elevation: 0.0, // Elevación del botón
                                   ),
                                   onPressed: _toggleFavorite,
                                   child: IconButton(
                                     icon: _isFavorited
-                                        ? Icon(Icons.favorite_border,
-                                            color: const Color.fromARGB(
+                                        ? const Icon(Icons.favorite_border,
+                                            color: Color.fromARGB(
                                                 255, 255, 79, 255))
-                                        : Icon(Icons.favorite,
-                                            color: const Color.fromARGB(
+                                        : const Icon(Icons.favorite,
+                                            color: Color.fromARGB(
                                                 255, 255, 79, 255)),
                                     onPressed: _toggleFavorite,
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 20.0,
                               ),
                               ButtonTheme(
@@ -203,11 +203,11 @@ class _FirstScreen extends State<FirstScreen> {
                                 minWidth: 200.0,
                                 child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                    primary: Color.fromARGB(255, 212, 0,
+                                    foregroundColor: const Color.fromARGB(255, 212, 0,
                                         0), // Color de fondo del botón elevation: 2.0, // Elevación del botón
                                   ),
                                   onPressed: () {},
-                                  child: Text(
+                                  child: const Text(
                                     'Añadir a la carta',
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold),
@@ -233,54 +233,54 @@ class _FirstScreen extends State<FirstScreen> {
                     height: 10.0,
                   ),
                   Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: Color.fromARGB(255, 255, 255, 255),
-                        borderRadius: new BorderRadius.only(
-                          topLeft: const Radius.circular(10.0),
-                          topRight: const Radius.circular(10.0),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10.0),
+                          topRight: Radius.circular(10.0),
                         )),
                     height: 400,
                     width: 600,
                     child: Align(
                       alignment: Alignment.bottomLeft,
                       child: Padding(
-                        padding: EdgeInsets.all(20.0),
+                        padding: const EdgeInsets.all(20.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            SizedBox(
+                            const SizedBox(
                               height: 20.0,
                             ),
-                            Text(
+                            const Text(
                               'Más frutas',
                               style: TextStyle(
                                   fontSize: 50.0, fontWeight: FontWeight.bold),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10.0,
                             ),
-                            Text('Más frutas.'),
-                            SizedBox(
+                            const Text('Más frutas.'),
+                            const SizedBox(
                               height: 20.0,
                             ),
                             CounterDesign(),
-                            SizedBox(
+                            const SizedBox(
                               height: 30.0,
                             ),
-                            Text(
+                            const Text(
                               'Descripción del producto',
                               style: TextStyle(
                                   fontSize: 20.0, fontWeight: FontWeight.bold),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 15.0,
                             ),
-                            Text(
+                            const Text(
                               'Otra rica piña, otra fresa delicioosa y otro arándano espectacular.',
                               style:
                                   TextStyle(letterSpacing: 2.0, fontSize: 15.0),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 30.0,
                             ),
                             Row(
@@ -293,7 +293,7 @@ class _FirstScreen extends State<FirstScreen> {
                                   height: 70.0,
                                   child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
-                                      primary: Colors
+                                      foregroundColor: Colors
                                           .white, // Color de fondo del botón
 
                                       elevation: 0.0, // Elevación del botón
@@ -301,17 +301,17 @@ class _FirstScreen extends State<FirstScreen> {
                                     onPressed: _toggleFavorite,
                                     child: IconButton(
                                       icon: _isFavorited
-                                          ? Icon(Icons.favorite_border,
-                                              color: const Color.fromARGB(
+                                          ? const Icon(Icons.favorite_border,
+                                              color: Color.fromARGB(
                                                   255, 255, 79, 255))
-                                          : Icon(Icons.favorite,
-                                              color: const Color.fromARGB(
+                                          : const Icon(Icons.favorite,
+                                              color: Color.fromARGB(
                                                   255, 255, 79, 255)),
                                       onPressed: _toggleFavorite,
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 20.0,
                                 ),
                                 ButtonTheme(
@@ -321,11 +321,11 @@ class _FirstScreen extends State<FirstScreen> {
                                   minWidth: 200.0,
                                   child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
-                                      primary: Color.fromARGB(255, 212, 0,
+                                      foregroundColor: const Color.fromARGB(255, 212, 0,
                                           0), // Color de fondo del botón elevation: 2.0, // Elevación del botón
                                     ),
                                     onPressed: () {},
-                                    child: Text(
+                                    child: const Text(
                                       'Añadir a la carta',
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold),

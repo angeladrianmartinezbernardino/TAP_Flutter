@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
       gifWidth: 400,
       gifHeight: MediaQuery.of(context).size.height,
       duration: const Duration(milliseconds: 3000),
-      nextScreen: LoginScreen(),
+      nextScreen: InicioSesion(),
     );
   }
 }
