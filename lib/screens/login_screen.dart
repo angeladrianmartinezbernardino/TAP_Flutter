@@ -134,10 +134,8 @@ class _InicioSesionState extends State<InicioSesion> {
       width: double.infinity,
       child: ElevatedButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const DeslizadorCircular()),
-          );
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => const AplicacionFrutas()));
         },
         style: ButtonStyle(
           elevation: MaterialStateProperty.all(5.0),
@@ -147,8 +145,8 @@ class _InicioSesionState extends State<InicioSesion> {
               borderRadius: BorderRadius.circular(30.0),
             ),
           ),
-          backgroundColor:
-              MaterialStateProperty.all(const Color.fromARGB(255, 255, 255, 255)),
+          backgroundColor: MaterialStateProperty.all(
+              const Color.fromARGB(255, 255, 255, 255)),
         ),
         child: const Text(
           'Ingresar ahora',

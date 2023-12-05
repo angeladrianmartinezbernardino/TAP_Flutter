@@ -10,11 +10,11 @@ import 'package:topicos/screens/splash_screen.dart';
 import 'package:topicos/pages/onboarding_page.dart';
 
 void main() {
-  runApp(const InicioSesion());
-  runApp(const AplicacionFrutas());
+  runApp(const DeslizadorCircular());
+  //runApp(const InicioSesion());
+  //runApp(const AplicacionFrutas());
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  runApp(const DeslizadorCircular());
 }
 
 class InicioSesion extends StatelessWidget {
