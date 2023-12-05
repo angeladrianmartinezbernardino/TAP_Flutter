@@ -98,7 +98,7 @@ class MenuFrutas extends State<AplicacionFrutas> {
             ),
           ],
         ),
-        backgroundColor: const Color.fromARGB(255, 251, 255, 1),
+        backgroundColor: const Color.fromARGB(255, 250, 255, 1),
         body: ListView(
           children: <Widget>[
             Column(
