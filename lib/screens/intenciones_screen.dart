@@ -4,7 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:image_picker/image_picker.dart';
 
 class IntencionesScreen extends StatefulWidget {
-  IntencionesScreen({super.key});
+  const IntencionesScreen({super.key});
 
   @override
   State<IntencionesScreen> createState() => _IntencionesScreenState();
@@ -17,10 +17,10 @@ class _IntencionesScreenState extends State<IntencionesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Intenciones"),
+        title: const Text("Intenciones"),
       ),
       body: ListView(
-        padding: EdgeInsets.only(left: 5, top: 5, right: 5),
+        padding: const EdgeInsets.only(left: 5, top: 5, right: 5),
         children: [
           cardIntencion(
               color: Colors.amber,
@@ -94,7 +94,7 @@ class _IntencionesScreenState extends State<IntencionesScreen> {
   Future<void> _openWEB(BuildContext context) async {
     Uri url = Uri.parse("https://itcelaya.edu.mx");
     if (!await launchUrl(url)) {
-      final snackBar = SnackBar(content: Text('La URL no es valida'));
+      const snackBar = SnackBar(content: Text('La URL no es valida'));
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
   }
@@ -102,7 +102,7 @@ class _IntencionesScreenState extends State<IntencionesScreen> {
   Future<void> _callPhone(BuildContext context) async {
     Uri url = Uri.parse("tel:4612279093");
     if (!await launchUrl(url)) {
-      final snackBar = SnackBar(content: Text('El número no es valido'));
+      const snackBar = SnackBar(content: Text('El número no es valido'));
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
   }
@@ -110,7 +110,7 @@ class _IntencionesScreenState extends State<IntencionesScreen> {
   Future<void> _sendSMS(BuildContext context) async {
     Uri url = Uri.parse("sms:4612279093?body=hola");
     if (!await launchUrl(url)) {
-      final snackBar = SnackBar(content: Text('El número no es valido'));
+      const snackBar = SnackBar(content: Text('El número no es valido'));
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
   }
@@ -122,7 +122,7 @@ class _IntencionesScreenState extends State<IntencionesScreen> {
         query: 'subject=Saludos&body=Buen dia :)');
 
     if (!await launchUrl(params)) {
-      final snackBar = SnackBar(content: Text('No se pudo enviar el EMAIL'));
+      const snackBar = SnackBar(content: Text('No se pudo enviar el EMAIL'));
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
   }
@@ -145,7 +145,7 @@ class _IntencionesScreenState extends State<IntencionesScreen> {
       child: ListTile(
         title: Text(title),
         subtitle: Text(subtitle),
-        trailing: Icon(Icons.chevron_right),
+        trailing: const Icon(Icons.chevron_right),
         leading: img,
         onTap: evento,
       ),

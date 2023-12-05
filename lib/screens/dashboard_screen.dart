@@ -6,9 +6,9 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 9, 72, 12),
+      backgroundColor: const Color.fromARGB(255, 9, 72, 12),
       appBar: AppBar(
-        title: Text('Flutter Topicos'),
+        title: const Text('Flutter Topicos'),
       ),
       drawer: Drawer(
         child: ListView(
@@ -21,19 +21,19 @@ class DashboardScreen extends StatelessWidget {
               accountEmail: Text('ruben.torres@itcelaya.edu.mx'),
             ),
             ListTile(
-              title: Text('Conversor'),
-              subtitle: Text('Temperatura'),
-              trailing: Icon(Icons.chevron_right),
-              leading: Icon(Icons.thermostat),
+              title: const Text('Conversor'),
+              subtitle: const Text('Temperatura'),
+              trailing: const Icon(Icons.chevron_right),
+              leading: const Icon(Icons.thermostat),
               onTap: () {
                 Navigator.pushNamed(context, "/temp");
               },
             ),
             ListTile(
-              title: Text('Intenciones'),
-              subtitle: Text('Miscelanea'),
-              trailing: Icon(Icons.chevron_right),
-              leading: Icon(Icons.phone_android),
+              title: const Text('Intenciones'),
+              subtitle: const Text('Miscelanea'),
+              trailing: const Icon(Icons.chevron_right),
+              leading: const Icon(Icons.phone_android),
               onTap: () {
                 Navigator.pushNamed(context, "/int");
               },

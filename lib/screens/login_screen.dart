@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:topicos/main.dart';
@@ -17,7 +19,7 @@ class _InicioSesionState extends State<InicioSesion> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
+        const Text(
           'Correo electrónico',
           style: kLabelStyle,
         ),
@@ -26,16 +28,16 @@ class _InicioSesionState extends State<InicioSesion> {
           alignment: Alignment.centerLeft,
           decoration: kBoxDecorationStyle,
           height: 60.0,
-          child: TextField(
+          child: const TextField(
             keyboardType: TextInputType.emailAddress,
-            style: const TextStyle(
+            style: TextStyle(
               color: Color.fromARGB(0, 0, 0, 0),
               fontFamily: 'OpenSans',
             ),
             decoration: InputDecoration(
               border: InputBorder.none,
-              contentPadding: const EdgeInsets.only(top: 14.0),
-              prefixIcon: const Icon(
+              contentPadding: EdgeInsets.only(top: 14.0),
+              prefixIcon: Icon(
                 Icons.email,
                 color: Color.fromARGB(0, 0, 0, 0),
               ),
@@ -52,7 +54,7 @@ class _InicioSesionState extends State<InicioSesion> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
+        const Text(
           'Contraseña',
           style: kLabelStyle,
         ),
@@ -61,16 +63,16 @@ class _InicioSesionState extends State<InicioSesion> {
           alignment: Alignment.centerLeft,
           decoration: kBoxDecorationStyle,
           height: 60.0,
-          child: TextField(
+          child: const TextField(
             obscureText: true,
-            style: const TextStyle(
+            style: TextStyle(
               color: Color.fromARGB(0, 0, 0, 0),
               fontFamily: 'OpenSans',
             ),
             decoration: InputDecoration(
               border: InputBorder.none,
-              contentPadding: const EdgeInsets.only(top: 14.0),
-              prefixIcon: const Icon(
+              contentPadding: EdgeInsets.only(top: 14.0),
+              prefixIcon: Icon(
                 Icons.lock,
                 color: Color.fromARGB(0, 0, 0, 0),
               ),
@@ -88,8 +90,8 @@ class _InicioSesionState extends State<InicioSesion> {
       alignment: Alignment.centerRight,
       child: TextButton(
         onPressed: () => print('Forgot Password Button Pressed'),
-        child: Padding(
-          padding: const EdgeInsets.only(right: 8.0),
+        child: const Padding(
+          padding: EdgeInsets.only(right: 8.0),
           child: Text(
             '¿Olvidaste tu contraseña?',
             style: kLabelStyle,
@@ -117,7 +119,7 @@ class _InicioSesionState extends State<InicioSesion> {
               },
             ),
           ),
-          Text(
+          const Text(
             'Recuérdame esto cada vez que esté aquí',
             style: kLabelStyle,
           ),
@@ -134,19 +136,19 @@ class _InicioSesionState extends State<InicioSesion> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => DeslizadorCircular()),
+            MaterialPageRoute(builder: (context) => const DeslizadorCircular()),
           );
         },
         style: ButtonStyle(
           elevation: MaterialStateProperty.all(5.0),
-          padding: MaterialStateProperty.all(EdgeInsets.all(15.0)),
+          padding: MaterialStateProperty.all(const EdgeInsets.all(15.0)),
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30.0),
             ),
           ),
           backgroundColor:
-              MaterialStateProperty.all(Color.fromARGB(255, 255, 255, 255)),
+              MaterialStateProperty.all(const Color.fromARGB(255, 255, 255, 255)),
         ),
         child: const Text(
           'Ingresar ahora',
@@ -163,16 +165,16 @@ class _InicioSesionState extends State<InicioSesion> {
   }
 
   Widget _buildSignInWithText() {
-    return Column(
+    return const Column(
       children: <Widget>[
-        const Text(
+        Text(
           '- O -',
           style: TextStyle(
             color: Color.fromARGB(250, 0, 0, 0),
             fontWeight: FontWeight.w400,
           ),
         ),
-        const SizedBox(height: 20.0),
+        SizedBox(height: 20.0),
         Text(
           'Registrarse por primera vez con otras plataformas',
           style: kLabelStyle,
@@ -190,7 +192,7 @@ class _InicioSesionState extends State<InicioSesion> {
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: const Color.fromARGB(0, 0, 0, 0),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Color.fromARGB(0, 0, 0, 0),
               offset: Offset(0, 2),
@@ -282,7 +284,7 @@ class _InicioSesionState extends State<InicioSesion> {
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 height: double.infinity,
                 child: SingleChildScrollView(
                   physics: const AlwaysScrollableScrollPhysics(),

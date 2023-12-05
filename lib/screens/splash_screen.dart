@@ -1,6 +1,5 @@
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:topicos/screens/dashboard_screen.dart';
 import 'package:topicos/screens/login_screen.dart';
 
 class PantallaCarga extends StatefulWidget {
@@ -18,7 +17,7 @@ class _PantallaCargaState extends State<PantallaCarga> {
       gifWidth: 400,
       gifHeight: MediaQuery.of(context).size.height,
       duration: const Duration(milliseconds: 3000),
-      nextScreen: InicioSesion(),
+      nextScreen: const InicioSesion(),
     );
   }
 }

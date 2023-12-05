@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CounterDesign extends StatefulWidget {
+  const CounterDesign({super.key});
   @override
   State<StatefulWidget> createState() {
     return _CounterDesign();
@@ -36,7 +37,7 @@ class _CounterDesign extends State<CounterDesign> {
           ),
           child: Row(
             children: <Widget>[
-              new IconButton(
+              IconButton(
                 icon: const Icon(
                   Icons.add,
                   color: Colors.black,
@@ -45,14 +46,14 @@ class _CounterDesign extends State<CounterDesign> {
                   add();
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10.0,
               ),
-              new Text('$_n', style: new TextStyle(fontSize: 30.0)),
-              SizedBox(
+              Text('$_n', style: const TextStyle(fontSize: 30.0)),
+              const SizedBox(
                 width: 10.0,
               ),
-              new IconButton(
+              IconButton(
                 icon: const Icon(
                   Icons.remove,
                   color: Colors.black,
@@ -61,23 +62,22 @@ class _CounterDesign extends State<CounterDesign> {
                   minus();
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20.0,
               ),
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 100.0,
         ),
-        Container(
-            child: Text(
+        Text(
           'Contador $_amt',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 30.0,
+          style: const TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 30.0,
           ),
-        )),
+        ),
       ],
     );
   }

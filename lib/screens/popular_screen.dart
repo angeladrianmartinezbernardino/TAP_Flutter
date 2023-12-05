@@ -22,14 +22,14 @@ class _PopularScreenState extends State<PopularScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Popular Movies'),
+        title: const Text('Popular Movies'),
       ),
       body: FutureBuilder(
         future: popularApi!.getAllPopular(),
         builder: (context, AsyncSnapshot<List<PopularModel>?> snapshot) {
           if (snapshot.hasData) {
             return GridView.builder(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: 10,
@@ -55,15 +55,13 @@ class _PopularScreenState extends State<PopularScreen> {
   }
 
   Widget cardPopular(PopularModel popularModel) {
-    return Container(
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(10),
-        child: FadeInImage(
-          fit: BoxFit.fill,
-          image: NetworkImage(
-              'https://image.tmdb.org/t/p/w500/${popularModel.posterPath}'),
-          placeholder: AssetImage('assets/loading_splash.gif'),
-        ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(10),
+      child: FadeInImage(
+        fit: BoxFit.fill,
+        image: NetworkImage(
+            'https://image.tmdb.org/t/p/w500/${popularModel.posterPath}'),
+        placeholder: const AssetImage('assets/loading_splash.gif'),
       ),
     );
   }

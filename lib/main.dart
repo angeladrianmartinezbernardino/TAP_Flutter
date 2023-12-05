@@ -1,25 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:topicos/screens/conversor_screen.dart';
 import 'package:topicos/screens/counter.dart';
 import 'package:topicos/screens/dashboard_screen.dart';
 import 'package:topicos/screens/image_carousel.dart';
 import 'package:topicos/screens/intenciones_screen.dart';
-import 'package:topicos/screens/login_screen.dart';
 import 'package:topicos/screens/popular_screen.dart';
 import 'package:topicos/screens/splash_screen.dart';
 import 'package:topicos/pages/onboarding_page.dart';
 
+void main() {
+  runApp(const InicioSesion());
+  runApp(const AplicacionFrutas());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  runApp(const DeslizadorCircular());
+}
+
 class InicioSesion extends StatelessWidget {
   const InicioSesion({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
         "/temp": (context) => const ConversorScreen(),
         "/dash": (context) => const DashboardScreen(),
-        "/int": (context) => IntencionesScreen(),
-        "/movie": (context) => PopularScreen()
+        "/int": (context) => const IntencionesScreen(),
+        "/movie": (context) => const PopularScreen()
       },
       debugShowCheckedModeBanner: false,
       home: const PantallaCarga(),
@@ -27,19 +34,8 @@ class InicioSesion extends StatelessWidget {
   }
 }
 
-void main() {
-  //runApp(const AplicacionFrutas());
-  runApp(const InicioSesion());
-  /*
-  WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  runApp(const MyApp());
-  */
-}
-
 class DeslizadorCircular extends StatelessWidget {
   const DeslizadorCircular({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -110,7 +106,7 @@ class MenuFrutas extends State<AplicacionFrutas> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                CarouselWithIndicatorDemo(),
+                const CarouselWithIndicatorDemo(),
                 const SizedBox(
                   height: 10.0,
                 ),
@@ -145,7 +141,7 @@ class MenuFrutas extends State<AplicacionFrutas> {
                           const SizedBox(
                             height: 20.0,
                           ),
-                          CounterDesign(),
+                          const CounterDesign(),
                           const SizedBox(
                             height: 30.0,
                           ),
@@ -229,7 +225,7 @@ class MenuFrutas extends State<AplicacionFrutas> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
-                  CarouselWithIndicatorDemo(),
+                  const CarouselWithIndicatorDemo(),
                   const SizedBox(
                     height: 10.0,
                   ),
@@ -264,7 +260,7 @@ class MenuFrutas extends State<AplicacionFrutas> {
                             const SizedBox(
                               height: 20.0,
                             ),
-                            CounterDesign(),
+                            const CounterDesign(),
                             const SizedBox(
                               height: 30.0,
                             ),

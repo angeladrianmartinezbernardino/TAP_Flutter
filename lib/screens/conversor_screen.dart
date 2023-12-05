@@ -7,7 +7,7 @@ class ConversorScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Conversor'),
+        title: const Text('Conversor'),
       ),
     );
   }
