@@ -9,28 +9,28 @@ class OnboardingPage extends StatelessWidget {
 
   final data = [
     CardPlanetData(
-      title: "observe",
+      title: "Presentación de la escuela",
       subtitle:
           "The night sky has much to offer to those who seek its mystery.",
-      image: const AssetImage("assets/img-1.png"),
+      image: const AssetImage("assets/ITC.jpg"),
       backgroundColor: const Color.fromRGBO(0, 10, 56, 1),
       titleColor: Colors.pink,
       subtitleColor: Colors.white,
       background: LottieBuilder.asset("assets/animation/bg-1.json"),
     ),
     CardPlanetData(
-      title: "imagine",
+      title: "Presentación de la carrera",
       subtitle: "An endless number of galaxies means endless possibilities.",
-      image: const AssetImage("assets/img-2.png"),
+      image: const AssetImage("assets/ISC.jpg"),
       backgroundColor: Colors.white,
       titleColor: Colors.purple,
       subtitleColor: const Color.fromRGBO(0, 10, 56, 1),
       background: LottieBuilder.asset("assets/animation/bg-2.json"),
     ),
     CardPlanetData(
-      title: "stargaze",
+      title: "Instalaciones y demás",
       subtitle: "The sky dome is a beautiful graveyard of stars.",
-      image: const AssetImage("assets/img-3.png"),
+      image: const AssetImage("assets/Instalaciones del ITC campus 2.jpg"),
       backgroundColor: const Color.fromRGBO(71, 59, 117, 1),
       titleColor: Colors.yellow,
       subtitleColor: Colors.white,
@@ -45,7 +45,6 @@ class OnboardingPage extends StatelessWidget {
         colors: data.map((e) => e.backgroundColor).toList(),
         itemCount: data.length,
         itemBuilder: (int index) {
-          // Aquí se ha modificado la firma de la función
           return CardPlanet(data: data[index]);
         },
         onFinish: () {
