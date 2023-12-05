@@ -17,8 +17,8 @@ void main() {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 }
 
-class InicioSesion extends StatelessWidget {
-  const InicioSesion({super.key});
+class OtrasOpciones extends StatelessWidget {
+  const OtrasOpciones({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
