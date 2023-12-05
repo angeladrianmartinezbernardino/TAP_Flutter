@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:topicos/screens/dashboard_screen.dart';
 import 'package:topicos/screens/login_screen.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+class PantallaCarga extends StatefulWidget {
+  const PantallaCarga({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<PantallaCarga> createState() => _PantallaCargaState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _PantallaCargaState extends State<PantallaCarga> {
   @override
   Widget build(BuildContext context) {
     return FlutterSplashScreen.gif(

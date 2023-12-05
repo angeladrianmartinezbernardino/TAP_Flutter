@@ -8,10 +8,9 @@ import 'package:topicos/screens/login_screen.dart';
 import 'package:topicos/screens/popular_screen.dart';
 import 'package:topicos/screens/splash_screen.dart';
 import 'package:topicos/pages/onboarding_page.dart';
-import 'package:flutter/services.dart';
 
-class AplicacionPrincipal extends StatelessWidget {
-  const AplicacionPrincipal({super.key});
+class InicioSesion extends StatelessWidget {
+  const InicioSesion({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,24 +22,24 @@ class AplicacionPrincipal extends StatelessWidget {
         "/movie": (context) => PopularScreen()
       },
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
+      home: const PantallaCarga(),
     );
   }
 }
 
 void main() {
-  runApp(const AplicacionFrutas());
-  runApp(const AplicacionPrincipal());
-
+  //runApp(const AplicacionFrutas());
+  runApp(const InicioSesion());
+  /*
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(const MyApp());
+  */
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class DeslizadorCircular extends StatelessWidget {
+  const DeslizadorCircular({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -50,7 +49,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 
 class AplicacionFrutas extends StatefulWidget {
   const AplicacionFrutas({super.key});
@@ -203,7 +201,10 @@ class MenuFrutas extends State<AplicacionFrutas> {
                                 minWidth: 200.0,
                                 child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                    foregroundColor: const Color.fromARGB(255, 212, 0,
+                                    foregroundColor: const Color.fromARGB(
+                                        255,
+                                        212,
+                                        0,
                                         0), // Color de fondo del botón elevation: 2.0, // Elevación del botón
                                   ),
                                   onPressed: () {},
@@ -321,7 +322,10 @@ class MenuFrutas extends State<AplicacionFrutas> {
                                   minWidth: 200.0,
                                   child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
-                                      foregroundColor: const Color.fromARGB(255, 212, 0,
+                                      foregroundColor: const Color.fromARGB(
+                                          255,
+                                          212,
+                                          0,
                                           0), // Color de fondo del botón elevation: 2.0, // Elevación del botón
                                     ),
                                     onPressed: () {},

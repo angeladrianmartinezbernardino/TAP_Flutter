@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../utilities/constants.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:topicos/main.dart';
 import 'package:topicos/utilities/constants.dart';
 
 class InicioSesion extends StatefulWidget {
+  const InicioSesion({super.key});
+
   @override
   _InicioSesionState createState() => _InicioSesionState();
 }
@@ -34,7 +34,7 @@ class _InicioSesionState extends State<InicioSesion> {
             ),
             decoration: InputDecoration(
               border: InputBorder.none,
-              contentPadding: EdgeInsets.only(top: 14.0),
+              contentPadding: const EdgeInsets.only(top: 14.0),
               prefixIcon: const Icon(
                 Icons.email,
                 color: Color.fromARGB(0, 0, 0, 0),
@@ -56,21 +56,21 @@ class _InicioSesionState extends State<InicioSesion> {
           'Contraseña',
           style: kLabelStyle,
         ),
-        SizedBox(height: 10.0),
+        const SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
           decoration: kBoxDecorationStyle,
           height: 60.0,
           child: TextField(
             obscureText: true,
-            style: TextStyle(
-              color: const Color.fromARGB(0, 0, 0, 0),
+            style: const TextStyle(
+              color: Color.fromARGB(0, 0, 0, 0),
               fontFamily: 'OpenSans',
             ),
             decoration: InputDecoration(
               border: InputBorder.none,
-              contentPadding: EdgeInsets.only(top: 14.0),
-              prefixIcon: Icon(
+              contentPadding: const EdgeInsets.only(top: 14.0),
+              prefixIcon: const Icon(
                 Icons.lock,
                 color: Color.fromARGB(0, 0, 0, 0),
               ),
@@ -89,7 +89,7 @@ class _InicioSesionState extends State<InicioSesion> {
       child: TextButton(
         onPressed: () => print('Forgot Password Button Pressed'),
         child: Padding(
-          padding: EdgeInsets.only(right: 8.0),
+          padding: const EdgeInsets.only(right: 8.0),
           child: Text(
             '¿Olvidaste tu contraseña?',
             style: kLabelStyle,
@@ -100,7 +100,7 @@ class _InicioSesionState extends State<InicioSesion> {
   }
 
   Widget _buildRememberMeCheckbox() {
-    return Container(
+    return SizedBox(
       height: 20.0,
       child: Row(
         children: <Widget>[
@@ -109,7 +109,7 @@ class _InicioSesionState extends State<InicioSesion> {
             child: Checkbox(
               value: _rememberMe,
               checkColor: Colors.green,
-              activeColor: Color.fromARGB(0, 0, 0, 0),
+              activeColor: const Color.fromARGB(0, 0, 0, 0),
               onChanged: (value) {
                 setState(() {
                   _rememberMe = value!;
@@ -128,10 +128,15 @@ class _InicioSesionState extends State<InicioSesion> {
 
   Widget _buildLoginBtn() {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 25.0),
+      padding: const EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: () => print('Login Button Pressed'),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => DeslizadorCircular()),
+          );
+        },
         style: ButtonStyle(
           elevation: MaterialStateProperty.all(5.0),
           padding: MaterialStateProperty.all(EdgeInsets.all(15.0)),
@@ -143,7 +148,7 @@ class _InicioSesionState extends State<InicioSesion> {
           backgroundColor:
               MaterialStateProperty.all(Color.fromARGB(255, 255, 255, 255)),
         ),
-        child: Text(
+        child: const Text(
           'Ingresar ahora',
           style: TextStyle(
             color: Color.fromARGB(255, 0, 0, 0),
@@ -160,14 +165,14 @@ class _InicioSesionState extends State<InicioSesion> {
   Widget _buildSignInWithText() {
     return Column(
       children: <Widget>[
-        Text(
+        const Text(
           '- O -',
           style: TextStyle(
             color: Color.fromARGB(250, 0, 0, 0),
             fontWeight: FontWeight.w400,
           ),
         ),
-        SizedBox(height: 20.0),
+        const SizedBox(height: 20.0),
         Text(
           'Registrarse por primera vez con otras plataformas',
           style: kLabelStyle,
@@ -184,7 +189,7 @@ class _InicioSesionState extends State<InicioSesion> {
         width: 60.0,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: Color.fromARGB(0, 0, 0, 0),
+          color: const Color.fromARGB(0, 0, 0, 0),
           boxShadow: [
             BoxShadow(
               color: Color.fromARGB(0, 0, 0, 0),
@@ -202,20 +207,20 @@ class _InicioSesionState extends State<InicioSesion> {
 
   Widget _buildSocialBtnRow() {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 30.0),
+      padding: const EdgeInsets.symmetric(vertical: 40.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           _buildSocialBtn(
             () => print('Inicia fácilmente en Instagram'),
-            AssetImage(
-              'assets/logos/Instagram.png',
+            const AssetImage(
+              'assets/Instagram.png',
             ),
           ),
           _buildSocialBtn(
             () => print('Inicia fácilmente en Google'),
-            AssetImage(
-              'assets/logos/Google.png',
+            const AssetImage(
+              'assets/Google.png',
             ),
           ),
         ],
@@ -227,7 +232,7 @@ class _InicioSesionState extends State<InicioSesion> {
     return GestureDetector(
       onTap: () => print('Sign Up Button Pressed'),
       child: RichText(
-        text: TextSpan(
+        text: const TextSpan(
           children: [
             TextSpan(
               text: '¿No tienes una cuenta? ',
@@ -263,7 +268,7 @@ class _InicioSesionState extends State<InicioSesion> {
               Container(
                 height: double.infinity,
                 width: double.infinity,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
@@ -280,15 +285,15 @@ class _InicioSesionState extends State<InicioSesion> {
               Container(
                 height: double.infinity,
                 child: SingleChildScrollView(
-                  physics: AlwaysScrollableScrollPhysics(),
-                  padding: EdgeInsets.symmetric(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  padding: const EdgeInsets.symmetric(
                     horizontal: 40.0,
                     vertical: 120.0,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(
+                      const Text(
                         'Bienvenido',
                         style: TextStyle(
                           color: Color.fromARGB(255, 0, 0, 0),
@@ -297,9 +302,9 @@ class _InicioSesionState extends State<InicioSesion> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 30.0),
+                      const SizedBox(height: 30.0),
                       _buildEmailTF(),
-                      SizedBox(
+                      const SizedBox(
                         height: 30.0,
                       ),
                       _buildPasswordTF(),
